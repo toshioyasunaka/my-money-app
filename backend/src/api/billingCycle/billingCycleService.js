@@ -7,13 +7,13 @@ BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 // MIDDLEWARES
 BillingCycle.route('get', (req, res, next) => {
-    BillingCycle.find({}, (err, docs) => {
-        if(!err) {
+    BillingCycle.find({}, (error, docs) => {
+        if(!error) {
             res.json(docs)
         } else {
             res.status(500).json({errors: [error]})
         }
-    })
+    }).skip(req.query.skip).limit(req.query.limit)
 })
 
 BillingCycle.route('count', (req, res, next) => { // irá retornar a quantidade de elementos que se tem na coleção
