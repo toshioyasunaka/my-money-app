@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './main/App'
+import Routes from './main/routes'
 
-ReactDOM.render(<App />, document.getElementById('App'))
+ReactDOM.render(<Routes />, document.getElementById('App'))

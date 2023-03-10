@@ -13,7 +13,7 @@ const App = props => {
             <Header />
             <Sidebar />
             <div className="content-wrapper">
-                <Routes />
+                {props.children}
             </div>
             <Footer />
         </div>
