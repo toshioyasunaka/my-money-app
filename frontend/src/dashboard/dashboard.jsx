@@ -11,7 +11,7 @@ import { getSummary } from './dashboardActions'
 class Dashboard extends Component {
 
     componentWillMount() {
-        this.props.getSummary()
+        this.props.getSummary() // chamada para o ActionCreator
     }
 
     render() {
@@ -33,6 +33,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => ({summary: state.dashboard.summary})
-const mapDispatchToProps = dispatch => bindActionCreators({getSummary}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({getSummary}, dispatch) // ligação das actionsCreators p/ o dispatch
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

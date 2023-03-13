@@ -8,7 +8,8 @@ import promise from 'redux-promise'
 import reducers from './main/reducers'
 import Routes from './main/routes'
 
-const store = applyMiddleware(promise)(createStore)(reducers)
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = applyMiddleware(promise)(createStore)(reducers, devTools) // (promise) é um middleware que fará com que a comunicação com o backend seja feita e só seguirá adiante p/ os reducers quando os dados chegarem, a fim de não ter valores null ou undefined como retorno da action
 ReactDOM.render(
     <Provider store={store}>
         <Routes />
