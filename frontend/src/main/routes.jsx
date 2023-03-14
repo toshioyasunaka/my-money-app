@@ -2,7 +2,7 @@ import React from "react";
 import {Router, Route, IndexRoute, Redirect, hashHistory} from 'react-router'
 
 import App from '../main/App'
-import Dashboard from '../dashboard2/dashboard2'
+import Dashboard from '../dashboard/dashboard'
 import BillingCycle from '../billingCycle/billingCycle'
 
 export default props => (
@@ -11,7 +11,6 @@ export default props => (
             <IndexRoute component={Dashboard} />
             <Route path='billingCycles' component={BillingCycle} />
         </Route>
-        <Route path='/billingCycles' component={BillingCycle} />
         <Redirect from='*' to='/' />
     </Router>
 )
