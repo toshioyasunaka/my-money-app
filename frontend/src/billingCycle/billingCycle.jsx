@@ -13,10 +13,9 @@ import { selectTab, showTabs } from "../common/tab/tabActions";
 
 class BillingCycle extends Component {
 
-    // ENTRAR COM A ABA SELECIONADA
     componentWillMount() {
-        this.props.selectTab('tabList')
-        this.props.showTabs('tabList', 'tabCreate')
+        this.props.selectTab('tabList') // aba selecionada padrão
+        this.props.showTabs('tabList', 'tabCreate') // abas que serão exibidas por padrão
     }
 
     render() {
